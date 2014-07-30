@@ -1,0 +1,22 @@
+<h1>Artist #<%= @artist.id %></h1>
+
+<div>
+  <strong>Name</strong>:<br />
+  <p><%= @artist.name %></p>
+</div>
+<div>
+  <strong>Image url</strong>:<br />
+  <p><img src="<%= @artist.image_url %>"></p>
+</div>
+
+<div>
+  <strong>Songs</strong>:<br />
+  <ul> <% @artist.songs.each do |song| %>
+<li> <%= song.name %> </li>
+    <% end %>
+  </ul>
+    </div>
+
+
+<a href="/artists/<%= @artist.id %>/edit">Edit</a> |
+<a href="/artists/<%= @artist.id %>/destroy">Destroy</a>
